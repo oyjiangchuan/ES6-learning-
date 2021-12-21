@@ -187,3 +187,4 @@ import moduleC from 'my-awesome-lib/internals/private-module-c'
 [官方文档地址](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
 [package.json，你知道多少](https://juejin.cn/post/7023539063424548872#heading-12)
 [Node.JS（新）Package.json exports 字段](https://www.cnblogs.com/taohuaya/p/15573719.html)
+[package.json中的每一个字段你都了解了吗](https://www.jianshu.com/p/a8ca1216adb3)
