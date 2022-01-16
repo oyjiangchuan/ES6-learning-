@@ -15,7 +15,7 @@ function MyPromise(executor) {
   this.resolve = (value) => {
     if (this.state === 'pending') {
       this.value = value
-      this.onResolvedCallbacks.forEach(cb => cb(value))
+      this.onResolvedCallbacks.forEach(cb => cb(value)) // 如果有成功回调 全部执行
       this.state = 'resolved'
     }
   }
@@ -23,7 +23,7 @@ function MyPromise(executor) {
   this.reject = (reason) => {
     if (this.state === 'pending') {
       this.reason = reason
-      this.onRejectedCallbacks.forEach(cb => cb(reason))
+      this.onRejectedCallbacks.forEach(cb => cb(reason)) // 如果有失败回调 全部执行
       this.state = 'rejected'
     }
   }
@@ -36,6 +36,7 @@ function MyPromise(executor) {
   }
 }
 
+// then方法
 MyPromise.prototype.then = function (onFulfilled, onRejected) {
   if (this.state === 'pending') {
     typeof onFulfilled == 'function' && this.onResolvedCallbacks.push(onFulfilled)
